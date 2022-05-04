@@ -2,7 +2,17 @@
     <h3>banner works!</h3>
     <p>{{ slogan }}</p>
     <p>{{ endereco }}</p>
-    <button class="btn btn-primary">{{ callToAction }}</button>
+    <button [class]="classBtn" (click)="onChangeLista()">{{ callToAction }}</button>
+    <!-- <button [class]="classBtn" (click)="onChangeLista()">{{ oculto ? 'Mostrar destaques':'Ocultar Destaques' }}</button> -->
+    <ul *ngIf="!oculto; else mensagem">
+        <li *ngFor="let destaque of destaques; index as i">#{{i+1}}-{{destaque}}</li>
+    </ul>
+    <ng-template #mensagem><!--O else espera um ng-template (que fica oculto ate que seja chamado ou o nfIf caia no else)-->
+        <br>
+        <small class="text-muted">
+            Você pode clicar no botão para ter os destaques
+        </small>
+    </ng-template>
 </div>
 
 

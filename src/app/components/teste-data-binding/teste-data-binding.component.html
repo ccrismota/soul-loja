@@ -1,0 +1,25 @@
+<div class="my-3">
+    <h1>String Interpolation</h1>
+    <hr>
+    <p>{{ nome }}</p>
+</div>
+
+<div class="my-5">
+    <h1>Property binding</h1>
+    <hr>
+    <img [src]="imagem" [height]="batata" alt="">
+    <a [href]="link" target="_blank">{{ labelLink }}</a>
+</div>
+
+<div class="my-3">
+    <h1>Event bindin</h1>
+    <button (click)="onAumentarAltura()" class="btn btn-success">Aumentar Altura</button>
+    <button (click)="onDiminuirAltura()" class="btn btn-warning">Diminuir Altura</button>
+</div>
+
+<div class="my-3">
+    <h1>Two may data binding</h1>
+    <hr>
+    <input class="form-control" type="tex" [(ngModel)]="labelLink">;
+    <button class="btn btn-danger" (click)="onLimpar()">Limpar</button>
+</div>

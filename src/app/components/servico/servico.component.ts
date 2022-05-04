@@ -6,8 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servico.component.css']
 })
 export class ServicoComponent implements OnInit {
+  
+  numeroAssinatura: number = 0;
+  
 
   constructor() { }
+
+onAssinar(){
+this.numeroAssinatura +=1;
+}
+
+
+
+onCancelar(){
+  if(this.numeroAssinatura){
+    this.numeroAssinatura -=1;
+  }
+}
 
   ngOnInit(): void {
   }

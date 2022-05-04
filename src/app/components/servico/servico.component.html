@@ -3,6 +3,11 @@
     <div class="card-body">
       <h5 class="card-title">Nome do Serviços</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="https://picsum.photos/" class="btn btn-primary">Comprar</a>
+      <button class="btn btn-primary" (click)="onAssinar()">Comprar</button>
+    </div>
+    <p>Numero de ssinatura: {{ numeroAssinatura }} </p>
+    <br>
+    <div>
+      <button class="btn btn-danger" (click)="onCancelar()">Cancelar Assinatura</button>
     </div>
   </div>

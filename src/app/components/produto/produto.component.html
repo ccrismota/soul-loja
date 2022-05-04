@@ -1,8 +1,22 @@
 <div class="card mb-5" style="width: 14rem;">
-    <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+    <img [src]="produto.imagem" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Nome do Produto</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="https://picsum.photos/200/300/?blur" class="btn btn-primary">Comprar</a>
+      <h5 class="card-title">{{ produto.nomeProduto }}</h5>
+      <p class="card-text">{{ produto.descricao }}</p>
+      <h3 class="text-success" [ngClass]="{'text-muted riscado':produto.emPromocao}">
+        {{ produto.preco | currency:'BRL'}}</h3>
+      <div *ngIf="produto.emPromocao">
+        <h3 class="text-success">{{ precoDesconto() | currency:'BRL'}}</h3>
+        <h3>
+          <span [ngStyle]="{'font-family': 'monospace'}" class="badge bg-success">{{ produto.desconto | percent }} OFF</span>
+        </h3>
+      </div>
+      <div [ngSwitch]="produto.categoriaProduto">
+        <span class="badge bg-danger" *ngSwitchCase="'eletro'">Eletro</span>
+        <span class="badge bg-success" *ngSwitchCase="'moveis'">Móveis</span>
+        <span class="badge bg-warning" *ngSwitchCase="'limpeza'">Limpeza</span>
+        <span class="badge bg-black" *ngSwitchDefault>Outros</span>
+      </div>
+      <button class="btn btn-primary" (click)="onComprar()">Comprar</button>
     </div>
   </div>
