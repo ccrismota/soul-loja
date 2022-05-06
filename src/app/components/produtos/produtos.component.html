@@ -1,19 +1,16 @@
 <h2 class="text-center">Produtos</h2>
 <hr>
+<p>Produtos no carrinho</p>
+<span class="badge bg-primary">{{ carrinho.length }}</span>
 <div class="container m-auto row">
-    <div class="row row-cols-4">
-      <div class="col"><app-produto></app-produto></div>
-      <div class="col"><app-produto></app-produto></div>
-      <div class="col"><app-produto></app-produto></div>
-      <div class="col"><app-produto></app-produto></div>
-    </div>
-  </div>
-
-  <div class="container m-auto row">
-    <div class="row row-cols-4">
-      <div class="col"><app-produto></app-produto></div>
-      <div class="col"><app-produto></app-produto></div>
-      <div class="col"><app-produto></app-produto></div>
-      <div class="col"><app-produto></app-produto></div>
+    <div class="row">
+      <div class="col"*ngFor="let produto of produtos">
+        <app-produto [dadoProduto]="produto" (onCarrinho)="addCarrinho($event)" >
+          <p *ngIf="produtosNoCarrinho(produto)" class="text-muted">
+            *Produto no carrinho
+            <content></content>
+          </p>
+        </app-produto>
+      </div>
     </div>
   </div>

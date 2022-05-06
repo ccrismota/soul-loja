@@ -12,7 +12,7 @@ endereco: String = 'Rua x, São Paulo';
 callToAction: String = 'Compre agora';
 oculto: boolean = true;
 idButton: boolean = true;
-classBtn: String = 'btn btn-primary';
+// classBtn: String = 'btn btn-primary';
 
 destaques: String[] = [
   'produtos de informatica com 30% OFF',
@@ -26,10 +26,10 @@ destaques: String[] = [
 onChangeLista(){
   this.oculto = !this.oculto;
   if(this.oculto){
-    this.classBtn = 'btn btn-primary';
+    // this.classBtn = 'btn btn-primary';
     this.callToAction = 'Mostrar destaques';
   }else{
-    this.classBtn = 'btn btn-danger';
+    // this.classBtn = 'btn btn-danger';
     this.callToAction = 'Ocultar Destaques';
   }
 }
