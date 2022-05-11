@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CategoriaProdudo, Produto } from 'src/app/models/produto';
+import { Produto } from 'src/app/models/produto';
 
 @Component({
   selector: 'app-produto',
@@ -11,12 +11,14 @@ export class ProdutoComponent implements OnInit {
 @Input('dadoProduto') produto!: Produto;//Torna a propriedade uma propriedade de entradado compponente
 @Output('onCarrinho') onCarrinho = new EventEmitter<Produto>();
 
+ 
+  constructor() { }
+
+
+
   precoDesconto(){
     return this.produto.preco - (this.produto.preco * this.produto.desconto);
   }
-
-
-  constructor() { }
 
   onComprar(){
   alert('Produto adicionado no carrinho');

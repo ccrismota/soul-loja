@@ -1,8 +1,8 @@
 export interface Produto {
-    imagem:String,
-    nomeProduto: String,
-    descricao: String,
-    preco:number,
+    imagem: string,
+    nomeProduto: string,
+    descricao: string,
+    preco: number,
     emPromocao: boolean,
     desconto: number,
     categoriaProduto: CategoriaProdudo

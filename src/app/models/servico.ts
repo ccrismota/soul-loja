@@ -1,7 +1,8 @@
 export interface Servico {
-    imagem: String,
-    nomeProduto: String,
-    numeroAssinatura: number,
+    imagem: string,
+    nomeServico: string,
+    descricao:string,
+    contratado: number,
     preco: number,
     desconto: number,
     horarioExecucao: HorarioExecucao

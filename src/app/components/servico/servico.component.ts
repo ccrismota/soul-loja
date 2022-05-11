@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { HorarioExecucao, Servico } from 'src/app/models/servico';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Servico } from 'src/app/models/servico';
+
 
 @Component({
   selector: 'app-servico',
@@ -8,27 +9,24 @@ import { HorarioExecucao, Servico } from 'src/app/models/servico';
 })
 
 export class ServicoComponent implements OnInit {
-  
-  servico : Servico = {
-    imagem: 'https://picsum.photos/200/200',
-    nomeProduto: 'Serviços',
-    numeroAssinatura: 0,
-    preco: 387.87,
-    desconto: 12,
-    horarioExecucao: HorarioExecucao.MANHA
-  }
 
+  @Input('dadosServico') servico!: Servico;  
+  @Output('onOrcamento') onOrcamento = new EventEmitter<Servico>();
+  
   constructor() { }
 
+
+  
   onContratar(){
-    this.servico.numeroAssinatura +=1;
+    this.servico.contratado +=1;
     alert('Serviço adicionado no orçamento');
+    this.onOrcamento.emit(this.servico);
   }
     
     
   onCancelar(){
-      if(this.servico.numeroAssinatura){
-        this.servico.numeroAssinatura -=1;
+      if(this.servico.contratado){
+        this.servico.contratado -=1;
       }
   }
 

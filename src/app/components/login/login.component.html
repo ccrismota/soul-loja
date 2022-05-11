@@ -1,0 +1,20 @@
+<form #loginForm="ngForm" class="m-1" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input #emailInp="ngModel" [(ngModel)]="email" id="email" type="email" name="email" type="text" class="form-control" required>
+        <small *ngIf="emailInp.touched && emailInp.invalid" >Campo inválido</small>
+    </div>
+    <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input #senhaInp="ngModel" [(ngModel)]="senha" id="senha" type="password" name="senha" type="text" class="form-control" required>
+        <small *ngIf="senhaInp.touched && senhaInp.invalid" >Campo inválido</small>
+    </div>
+    <button type="submit" class="btn btn-primary" (disabled)="loginForm.invalid">Logar</button>
+
+</form>
+
+<!--
+    VALID OR INVALID
+    TOUCHED OR UNTOUCHED
+    PRESTINE OR DIRTY
+-->

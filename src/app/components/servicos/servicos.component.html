@@ -2,17 +2,14 @@
 <hr>
 
 <div class="container m-auto row">
-    <div class="row row-cols-3">
-      <div class="col"><app-servico></app-servico></div>
-      <div class="col"><app-servico></app-servico></div>
-      <div class="col"><app-servico></app-servico></div>
+    <div class="row">
+      <div class="col" *ngFor="let servico of servicos">
+        <app-servico [dadosServico]="servico" (onOrcamento)="addOrcamento($event)" > 
+        <p *ngIf="servicoOrcamento(servico)" class="text-muted">
+          *Produto no carrinho
+          <content></content>
+        </p>
+      </app-servico>
     </div>
 </div>
 
-  <div class="container m-auto row">
-    <div class="row row-cols-3">
-      <div class="col"><app-servico></app-servico></div>
-      <div class="col"><app-servico></app-servico></div>
-      <div class="col"><app-servico></app-servico></div>
-    </div>
-  </div>

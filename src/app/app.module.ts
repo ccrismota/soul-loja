@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +12,21 @@ import { ServicosComponent } from './components/servicos/servicos.component';
 import { ServicoComponent } from './components/servico/servico.component';
 import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
 import { FormsModule } from '@angular/forms';
+import { EllipsisPipe } from './shared/pipes/ellipsis/ellipsis.pipe';
+import { PowPipe } from './shared/pipes/pow/pow.pipe';
+import { AbbvPipe } from './shared/pipes/abbv/abbv.pipe';
+import { SumPipe } from './shared/pipes/sum/sum.pipe';
+import { ProductArrayPipe } from './shared/pipes/product-array/product-array.pipe';
+import { ObfsEmailPipe } from './shared/pipes/obfs-email/obfs-email.pipe';
+import { PercentagePipe } from './shared/pipes/percentage/percentage.pipe';
+import { CensorPipe } from './shared/pipes/censor/censor.pipe';
+import localePt from '@angular/common/locales/pt'; //para colocar data no 
+import { registerLocaleData } from '@angular/common';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
 
+registerLocaleData(localePt)
 
 @NgModule({
   declarations: [
@@ -24,6 +38,17 @@ import { FormsModule } from '@angular/forms';
     ServicosComponent,
     ServicoComponent,
     TesteDataBindingComponent,
+    EllipsisPipe,
+    PowPipe,
+    AbbvPipe,
+    SumPipe,
+    ProductArrayPipe,
+    ObfsEmailPipe,
+    PercentagePipe,
+    CensorPipe,
+    HomeComponent,
+    LoginComponent,
+    NovoProdutoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +56,9 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+   {provide: LOCALE_ID, useValue: 'pt'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

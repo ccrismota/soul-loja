@@ -1,13 +1,13 @@
 <div class="card mb-5" style="width: 14rem;">
     <img [src]="servico.imagem" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Nome do Serviços</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">{{ servico.nomeServico}}</h5>
+      <p class="card-text">{{ servico.descricao }}</p>
       <button class="btn btn-primary" (click)="onContratar()">Contratar</button>
-    </div>
-    <p> Numero de assinaturas: {{ servico.numeroAssinatura }} </p>
+      <p class="text-muted " *ngIf="servico.contratado == 0; else: botao"> Contratado {{ servico.contratado }} vez(es)</p>
     <br>
-    <div>
-      <button class="btn btn-danger" (click)="onCancelar()">Cancelar Assinatura</button>
     </div>
+      <ng-template #botao>
+        <button class="btn btn-danger" (click)="onCancelar()">Cancelar</button>
+      </ng-template>
   </div>
