@@ -11,7 +11,7 @@ import { ProdutoComponent } from './components/produto/produto.component';
 import { ServicosComponent } from './components/servicos/servicos.component';
 import { ServicoComponent } from './components/servico/servico.component';
 import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EllipsisPipe } from './shared/pipes/ellipsis/ellipsis.pipe';
 import { PowPipe } from './shared/pipes/pow/pow.pipe';
 import { AbbvPipe } from './shared/pipes/abbv/abbv.pipe';
@@ -25,6 +25,10 @@ import { registerLocaleData } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { FeedbackUsuarioComponent } from './components/feedback-usuario/feedback-usuario.component';
+import { NovoServicoComponent } from './components/novo-servico/novo-servico.component';
+import { NovaLojaComponent } from './components/nova-loja/nova-loja.component';
 
 registerLocaleData(localePt)
 
@@ -48,13 +52,18 @@ registerLocaleData(localePt)
     CensorPipe,
     HomeComponent,
     LoginComponent,
-    NovoProdutoComponent
+    NovoProdutoComponent,
+    CadastroComponent,
+    FeedbackUsuarioComponent,
+    NovoServicoComponent,
+    NovaLojaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule //=> Necessario inserir para para trabalhar com active formes
   ],
   providers: [
    {provide: LOCALE_ID, useValue: 'pt'}

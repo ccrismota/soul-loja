@@ -1,0 +1,38 @@
+<form #novoServicoForm="ngForm" (ngSubmit)="onSubmit()" class="m-1">
+    <div class="mb-3">
+        <label for="nomeServico" class="form-label">Nome do servico</label>
+        <input  #nomeInp="ngModel" id="nomeServico" type="text" name="nomeServico" [(ngModel)]="servico.nomeServico" class="form-control" required>
+        <small *ngIf="nomeInp.touched && nomeInp.invalid" >Campo inválido</small>
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descricao</label>
+        <input  #proDesInp="ngModel" id="descricao" type="text" name="descricao" [(ngModel)]="servico.descricao" class="form-control" required>
+        <small *ngIf="proDesInp.touched && proDesInp.invalid" >Campo inválido</small>
+    </div>
+    <div class="mb-3">
+        <label for="imagem" class="form-label">Imagem</label>
+        <input  #proImaInp="ngModel" id="imagem" type="url" name="imagem"  [(ngModel)]="servico.imagem" class="form-control" required>
+        <small *ngIf="proImaInp.touched && proImaInp.invalid" >Campo inválido</small>
+    </div>
+    <div class="mb-3">
+        <label for="preco" class="form-label">Preço</label>
+        <input  #proPreInp="ngModel" id="preco" type="number" name="preco" [(ngModel)]="servico.preco" class="form-control" required>
+        <small *ngIf="proPreInp.touched && proPreInp.invalid" >Campo inválido</small>
+    </div>
+    <div class="mb-3">
+        <label for="categoria" class="form-label">Categoria</label>
+        <select name="categoaria" [(ngModel)]="servico.horarioExecucao" id="categoaria" class="form-select">
+            <option disabled>Selecione uma categoria</option>
+            <option value="eletro">Serviços em Eletrônicos</option>
+            <option value="limpeza">Limpeza</option>
+            <option value="moveis">Moveis</option>
+        </select>
+    </div>
+    <div *ngIf="servico.desconto" class="mb-3">
+        <label for="desconto" class="form-label">Desconto</label>
+        <input  #desInp="ngModel"  id="desconto" type="number" name="desconto" [(ngModel)]="servico.desconto" class="form-control" min="0" max="1" step="0.01" required>
+        <small *ngIf="desInp.touched && desInp.invalid" >Campo inválido</small>
+    </div>
+    <button type="submit" class="btn btn-primary" (disabled)="novoServicoForm.invalid" >criar servico</button>
+</form>
+

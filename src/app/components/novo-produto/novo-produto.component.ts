@@ -10,8 +10,8 @@ import { Produto } from 'src/app/models/produto';
 export class NovoProdutoComponent implements OnInit {
 
   constructor() { }
-
-  produto: Produto = {categoriaProduto: 'eletro'} as Produto;
+ 
+  produto: Produto = {categoriaProduto: 'eletro', emPromocao: true, desconto: 0.0} as Produto;
 
   onSubmit(){
     alert(`produtos ${this.produto.nomeProduto} criado`);
