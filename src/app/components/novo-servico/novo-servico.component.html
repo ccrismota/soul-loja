@@ -6,18 +6,18 @@
     </div>
     <div class="mb-3">
         <label for="descricao" class="form-label">Descricao</label>
-        <input  #proDesInp="ngModel" id="descricao" type="text" name="descricao" [(ngModel)]="servico.descricao" class="form-control" required>
-        <small *ngIf="proDesInp.touched && proDesInp.invalid" >Campo inválido</small>
+        <input  #descInp="ngModel" id="descricao" type="text" name="descricao" [(ngModel)]="servico.descricao" class="form-control" required>
+        <small *ngIf="descInp.touched && descInp.invalid" >Campo inválido</small>
     </div>
     <div class="mb-3">
         <label for="imagem" class="form-label">Imagem</label>
-        <input  #proImaInp="ngModel" id="imagem" type="url" name="imagem"  [(ngModel)]="servico.imagem" class="form-control" required>
-        <small *ngIf="proImaInp.touched && proImaInp.invalid" >Campo inválido</small>
+        <input  #imgInp="ngModel" id="imagem" type="url" name="imagem"  [(ngModel)]="servico.imagem" class="form-control" required>
+        <small *ngIf="imgInp.touched && imgInp.invalid" >Campo inválido</small>
     </div>
     <div class="mb-3">
         <label for="preco" class="form-label">Preço</label>
-        <input  #proPreInp="ngModel" id="preco" type="number" name="preco" [(ngModel)]="servico.preco" class="form-control" required>
-        <small *ngIf="proPreInp.touched && proPreInp.invalid" >Campo inválido</small>
+        <input  #preInp="ngModel" id="preco" type="number" name="preco" [(ngModel)]="servico.preco" class="form-control" required>
+        <small *ngIf="preInp.touched && preInp.invalid" >Campo inválido</small>
     </div>
     <div class="mb-3">
         <label for="categoria" class="form-label">Categoria</label>

@@ -37,5 +37,5 @@
         <input  #desInp="ngModel"  id="desconto" type="number" name="desconto" [(ngModel)]="produto.desconto" class="form-control" min="0" max="1" step="0.01" required>
         <small *ngIf="desInp.touched && desInp.invalid" >Campo inválido</small>
     </div>
-    <button type="submit" class="btn btn-primary" (disabled)="novoProdutoForm.invalid" >criar produto</button>
+    <button type="submit" class="btn btn-primary" (disabled)="novoProdutoForm.invalid">criar produto</button>
 </form>

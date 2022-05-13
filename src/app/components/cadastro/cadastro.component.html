@@ -3,7 +3,7 @@
         <label for="nome" class="form-label">Nome</label>
         <input formControlName="nome" id="nome" type="text" class="form-control">
         <small class="text-danger" *ngIf="nome?.touched && nome?.invalid">
-          <span *ngIf="nome?.hasError('requered')">O nome é obrigatório</span>
+          <span *ngIf="nome?.hasError('required')">O nome é obrigatório</span>
           <span *ngIf="nome?.hasError('minlength')">O mínimo é 5 caracteres</span>
         </small>
     </div>
@@ -11,7 +11,7 @@
         <label for="email" class="form-label">Email</label>
         <input formControlName="email" id="email" type="email" class="form-control">
         <small class="text-danger" *ngIf="email?.touched && email?.invalid">
-            <span *ngIf="email?.hasError('requered')">O email é obrigatório</span>
+            <span *ngIf="email?.hasError('required')">O email é obrigatório</span>
             <span *ngIf="email?.hasError('minlength')">Email inválido</span>
             <span *ngIf="email?.hasError('onlysoulcode')">Domínio não permitido</span>
         </small>
@@ -20,14 +20,14 @@
         <label for="endereco" class="form-label">Endereço</label>
         <input formControlName="endereco" id="endereco" type="text" class="form-control"></div>
         <small class="text-danger" *ngIf="endereco?.touched && endereco?.invalid">
-            <span *ngIf="endereco?.hasError('requered')">O endereco é obrigatório</span>
+            <span *ngIf="endereco?.hasError('required')">O endereco é obrigatório</span>
             <span *ngIf="endereco?.hasError('maxlength')">O endereço deve ter no máximo 30 caracteres</span>
         </small>
     <div class="mb-3">
         <label for="senha" class="form-label">Senha</label>
         <input formControlName="senha" id="senha" type="password" class="form-control">
         <small class="text-danger" *ngIf="senha?.touched && senha?.invalid">
-            <span *ngIf="senha?.hasError('requered')">A senha é obrigatória</span>
+            <span *ngIf="senha?.hasError('required')">A senha é obrigatória</span>
             <span *ngIf="senha?.hasError('minlength')">O mínimo é 8 caracteres</span>
         </small>
     </div>

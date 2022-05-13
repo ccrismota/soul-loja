@@ -4,11 +4,13 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { FeedbackUsuarioComponent } from './components/feedback-usuario/feedback-usuario.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NovaLojaComponent } from './components/nova-loja/nova-loja.component';
 import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
 import { NovoServicoComponent } from './components/novo-servico/novo-servico.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ServicosComponent } from './components/servicos/servicos.component';
+import { SorteioComponent } from './components/sorteio/sorteio.component';
 import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
 
 
@@ -24,7 +26,9 @@ const routes: Routes = [
   { path: 'servicos', component: ServicosComponent },
   { path: 'servico/novo', component: NovoServicoComponent},
   { path: 'nova-loja', component:NovaLojaComponent},
-  { path: 'login', component: LoginComponent }
+  { path: 'sorteio', component:SorteioComponent},
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

@@ -4,7 +4,7 @@
       <h5 class="card-title">{{ servico.nomeServico}}</h5>
       <p class="card-text">{{ servico.descricao }}</p>
       <button class="btn btn-primary" (click)="onContratar()">Contratar</button>
-      <p class="text-muted " *ngIf="servico.contratado == 0; else: botao"> Contratado {{ servico.contratado }} vez(es)</p>
+      <p class="text-muted " *ngIf="!servico.contratado; else: botao"> Contratado {{ servico.contratado }} vez(es)</p>
     <br>
     </div>
       <ng-template #botao>
