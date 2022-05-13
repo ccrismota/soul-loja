@@ -9,8 +9,7 @@ import { ProdutosService } from 'src/app/shared/services/produtos/produtos.servi
 })
 export class ProdutosComponent implements OnInit {
 
-  constructor(private produtosService: ProdutosService) { }// 1-cria o construtor
-
+ constructor(private produtosService: ProdutosService) { }// 1-cria o construtor
 
 produtos: Produto[] = [];//2-cria o array
 carrinho: Produto[] = [];

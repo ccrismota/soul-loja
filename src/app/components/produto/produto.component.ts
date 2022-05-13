@@ -8,7 +8,7 @@ import { Produto } from 'src/app/models/produto';
 })
 export class ProdutoComponent implements OnInit {
   
-@Input('dadoProduto') produto!: Produto;//Torna a propriedade uma propriedade de entradado compponente
+@Input('dadoProduto') produto!: Produto;//Torna a propriedade uma propriedade de entrada do compponente
 @Output('onCarrinho') onCarrinho = new EventEmitter<Produto>();
 
  

@@ -13,6 +13,10 @@
             Você pode clicar no botão para ter os destaques
         </small>
     </ng-template>
+    <p class="display-5" *ngIf="relogin$ | async as relogin"> 
+        <!--O 'async' faz a função do subscribe. E deve ser usado no html ao invés do ts-->
+       {{ relogin | date: "HH:mm:ss"}}
+    </p>
 </div>
 
 

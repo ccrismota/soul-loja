@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval, map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-banner',
@@ -21,8 +22,17 @@ destaques: String[] = [
   'Gift card de volarant'
 ];
 
+relogin$?: Observable<Date>;
+
   constructor() { }
 
+  ngOnInit(): void {
+    this.relogin$ = interval(1000).pipe(
+      map(() => new Date())
+    );
+  }
+
+  
 onChangeLista(){
   this.oculto = !this.oculto;
   if(this.oculto){
@@ -33,12 +43,5 @@ onChangeLista(){
     this.callToAction = 'Ocultar Destaques';
   }
 }
-
-
-
-
-
-  ngOnInit(): void {
-  }
 
 }

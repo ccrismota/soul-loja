@@ -1,0 +1,28 @@
+<div class="m-3">
+    <div class="m-1">
+        <label for="search">Nome do Usuário</label>
+        <input type="text" name="search" class="form-control" [(ngModel)]="userName" (keyup.enter)="onBuscar()" />
+    </div>
+    <button class="btn btn-warning" [disabled]="!userName.length" (click)="onBuscar()">Buscar</button>
+    <hr>
+    <div class=""></div>
+    <div *ngFor="let rep of resultados" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header"><i class="bi bi-github"></i> {{rep.owner.login}}</div>
+        <div class="card-body">
+            <h5 class="card-title">
+                {{rep.name}}
+                <a [href]="rep.html_url" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+            </h5>
+            <p class="card-text">
+                {{rep.description}}
+                <span class="text-muted d-block">{{rep.created_at}}</span>
+                <span class="text-muted d-block">{{rep.language}}</span>
+                <span class="text-muted d-block">
+                    <i class="bi bi-star-fill"></i>
+                    {{rep.stargazers_count}}</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- https://api.github.com/users/defunkt -->
